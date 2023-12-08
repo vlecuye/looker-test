@@ -15,6 +15,7 @@ view: approvals_raw_latest {
     type: string
     description: "The full JSON representation of the current document state."
     sql: ${TABLE}.data ;;
+    html: <a href="banana">{{rendered_value}}}</a>" ;;
   }
 
   dimension: document_id {
@@ -22,7 +23,6 @@ view: approvals_raw_latest {
     description: "The document id as defined in the firestore database."
     sql: ${TABLE}.document_id ;;
   }
-
   dimension: document_name {
     type: string
     description: "The full name of the changed document, for example, projects/collection/databases/(default)/documents/users/me)."
