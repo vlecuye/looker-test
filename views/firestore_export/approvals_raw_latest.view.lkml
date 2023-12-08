@@ -16,6 +16,10 @@ view: approvals_raw_latest {
     description: "The full JSON representation of the current document state."
     sql: ${TABLE}.data ;;
     html: <a href="banana">{{rendered_value}}}</a>" ;;
+    link:{
+      label: "test"
+      url: "/banane"
+    }
   }
 
   dimension: document_id {
