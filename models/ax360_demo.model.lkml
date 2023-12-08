@@ -10,4 +10,3 @@ datagroup: ax360_demo_default_datagroup {
 }
 
 persist_with: ax360_demo_default_datagroup
-
