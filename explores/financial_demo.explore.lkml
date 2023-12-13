@@ -1,4 +1,5 @@
 include: "/views/firestore_export/*.view.lkml"
+include: "/views/financial_mock_data/*.view.lkml"
 # Explores allow you to join together different views (database tables) based on the
 # relationships between fields. By joining a view into an Explore, you make those
 # fields available to users for data analysis.
@@ -10,3 +11,10 @@ include: "/views/firestore_export/*.view.lkml"
 # Typically, join parameters require that you define the join type, join relationship, and a sql_on clause.
 # Each joined view also needs to define a primary key.
 explore: approvals_raw_latest {}
+
+explore: trades {
+  join: company_details {
+    sql_on: ${trades.symbol} = ${company_details._symbol_} =;;
+    relationship: many_to_one
+  }
+}
