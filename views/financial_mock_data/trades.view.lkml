@@ -63,7 +63,7 @@ view: symbol_shares {
   derived_table: {
     sql:
       SELECT
-        symbol,
+        date,
         SUM(shares) AS shares
       FROM
         financial_mock_data.trades
@@ -72,15 +72,20 @@ view: symbol_shares {
       GROUP BY 1
     ;;
   }
-  dimension: shares {
+
+ dimension_group: date {
+  type: time
+  timeframes: [raw, date, week, month, quarter, year]
+  convert_tz: no
+  datatype: date
+  sql: ${TABLE}.date ;;
+}
+
+  measure: shares {
     sql: ${TABLE}.shares;;
   }
 
-  dimension: symbol {
-    sql: ${TABLE}.symbol;;
-  }
-
-  filter: symbol_filter {
+  filter: symbol {
     type: string
   }
 }
