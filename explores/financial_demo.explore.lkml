@@ -14,7 +14,7 @@ explore: approvals_raw_latest {}
 
 explore: trades {
   join: company_details {
-    sql_on: ${trades.symbol} = ${company_details._symbol_} =;;
+    sql_on: ${trades.symbol} = ${company_details._symbol_};;
     relationship: many_to_one
   }
 }
