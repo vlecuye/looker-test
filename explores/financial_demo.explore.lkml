@@ -17,4 +17,8 @@ explore: trades {
     sql_on: ${trades.symbol} = ${company_details._symbol_};;
     relationship: many_to_one
   }
+  access_filter: {
+    field:trades.advisor_id
+    user_attribute: advisorid
+  }
 }
