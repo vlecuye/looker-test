@@ -73,7 +73,7 @@ view: symbol_shares {
     ;;
   }
   dimension: shares {
-    sql: {$TABLE.shares} ;;
+    sql: ${TABLE}.shares;;
   }
 
   filter: symbol {
