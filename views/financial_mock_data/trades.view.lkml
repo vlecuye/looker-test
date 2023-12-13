@@ -82,7 +82,7 @@ view: symbol_shares {
   sql: ${TABLE}.date ;;
 }
 
-  measure: shares {
+  dimension: shares {
     sql: ${TABLE}.shares;;
   }
 
