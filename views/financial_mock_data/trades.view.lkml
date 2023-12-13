@@ -72,6 +72,9 @@ view: symbol_shares {
       GROUP BY 1
     ;;
   }
+  dimension: shares {
+    sql: {$TABLE.shares} ;;
+  }
 
   filter: symbol {
     type: string
