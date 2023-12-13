@@ -59,17 +59,17 @@ view: trades {
   }
 }
 
+
 view: symbol_shares {
   derived_table: {
     sql:
       SELECT
-        symbol,
         date,
         SUM(shares) AS shares
       FROM
         financial_mock_data.trades
       WHERE
-        {% condition symbol %} symbol_shares.symbol {% endcondition %}
+        {% condition symbol %} symbol {% endcondition %}
       GROUP BY 1
     ;;
   }
