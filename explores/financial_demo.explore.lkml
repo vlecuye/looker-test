@@ -21,4 +21,7 @@ explore: trades {
     field:trades.advisor_id
     user_attribute: advisorid
   }
-}
+  conditionally_filter: {
+
+  }
+  }

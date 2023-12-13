@@ -31,6 +31,9 @@ view: trades {
     sql: ${TABLE}.shares ;;
   }
 
+  filter: Totalsymbol {
+    type: string
+  }
   # A measure is a field that uses a SQL aggregate function. Here are defined sum and average
   # measures for this dimension, but you can also add measures of many different aggregates.
   # Click on the type parameter to see all the options in the Quick Help panel on the right.
@@ -53,5 +56,24 @@ view: trades {
   }
   measure: count {
     type: count
+  }
+}
+
+view: symbol_shares {
+  derived_table: {
+    sql:
+      SELECT
+        symbol,
+        SUM(shares) AS shares
+      FROM
+        financial_mock_data.trades
+      WHERE
+        {% condition symbol %} symbol_shares.symbol {% endcondition %}
+      GROUP BY 1
+    ;;
+  }
+
+  filter: symbol {
+    type: string
   }
 }
