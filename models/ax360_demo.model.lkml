@@ -12,4 +12,9 @@ datagroup: ax360_demo_default_datagroup {
 persist_with: ax360_demo_default_datagroup
 
 explore: bikeshare_stations {}
-explore: bikeshare_trips {}
+explore: bikeshare_trips {
+  join: bikeshare_stations{
+    sql_on: ${bikeshare_stations.station_id} = ${bikeshare_trips.end_station_id} ;;
+    relationship: one_to_many
+  }
+}
