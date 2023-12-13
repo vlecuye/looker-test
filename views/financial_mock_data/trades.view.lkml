@@ -63,6 +63,7 @@ view: symbol_shares {
   derived_table: {
     sql:
       SELECT
+        symbol,
         date,
         SUM(shares) AS shares
       FROM
