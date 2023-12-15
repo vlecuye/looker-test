@@ -1,4 +1,5 @@
 include: "/views/*.view.lkml"
+include: "/explores/*.explore.lkml"
 # Define the database connection to be used for this model.
 connection: "financial_demo"
 
