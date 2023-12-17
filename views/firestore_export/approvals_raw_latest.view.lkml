@@ -27,6 +27,21 @@ view: approvals_raw_latest {
     sql: JSON_VALUE(${TABLE}.data, '$.status');;
   }
 
+  dimension: analyst_name {
+    type: string
+    sql: JSON_VALUE(${TABLE}.data, '$.analyst_name');;
+  }
+
+  dimension: advisor_name {
+    type: string
+    sql: JSON_VALUE(${TABLE}.data, '$.advisor_name');;
+  }
+
+  dimension: description {
+    type: string
+    sql: JSON_VALUE(${TABLE}.data, '$.description');;
+  }
+
   dimension: document_id {
     type: string
     description: "The document id as defined in the firestore database."
