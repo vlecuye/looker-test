@@ -8,7 +8,7 @@ connection: "financial_demo"
 
 datagroup: ax360_demo_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
-  max_cache_age: "1 hour"
+  max_cache_age: "0 seconds"
 }
 persist_with: ax360_demo_default_datagroup
 
