@@ -24,8 +24,9 @@ view: approvals_raw_latest {
 
   dimension: status {
     type: string
-    sql: SELECT JSON_VALUE(${data}, '$.status') AS status
+    sql: SELECT JSON_VALUE(${data}, '$.status') AS status;;
   }
+
   dimension: document_id {
     type: string
     description: "The document id as defined in the firestore database."
