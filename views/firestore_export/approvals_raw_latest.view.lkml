@@ -24,7 +24,7 @@ view: approvals_raw_latest {
 
   dimension: status {
     type: string
-    sql: SELECT JSON_VALUE(${TABLE}.data, '$.status') AS status;;
+    sql: JSON_VALUE(${TABLE}.data, '$.status');;
   }
 
   dimension: document_id {
