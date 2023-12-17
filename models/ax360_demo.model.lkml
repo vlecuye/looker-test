@@ -1,5 +1,7 @@
 include: "/views/*.view.lkml"
 include: "/explores/*.explore.lkml"
+include: "/views/firestore_export/*.view.lkml"
+include: "/views/financial_mock_data/*.view.lkml"
 # Define the database connection to be used for this model.
 connection: "financial_demo"
 
@@ -18,4 +20,8 @@ explore: bikeshare_trips {
     sql_on: ${bikeshare_stations.station_id} = ${bikeshare_trips.end_station_id} ;;
     relationship: one_to_many
   }
+}
+
+explore: approvals_raw_latest {
+  persist_with: ax360_demo_default_datagroup
 }
